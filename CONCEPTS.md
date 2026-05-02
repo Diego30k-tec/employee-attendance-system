@@ -157,3 +157,6 @@ Model (PDO)  →  consulta MariaDB
      ↓
 Vista (.php)  →  muestra el resultado al usuario
 ```
+
+
+# PHP NO SE PUEDE LEER ENV

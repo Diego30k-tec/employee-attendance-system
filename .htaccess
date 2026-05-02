@@ -4,4 +4,14 @@ RewriteEngine On
 # Redireccionar si entran a la raiz del proyecto
 RewriteRule ^$ app/index.php [L]
 
+# Si el archivo no existe físicamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
+# Primero intenta con .php
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Si no encontró .php, intenta con .html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
